@@ -2,12 +2,12 @@ import java.util.Arrays;
 
 public class DistClosestNumbersProblem {
 
+    // brute force complexity is O(n * n)
     static int bruteForceSolution(int[] numbers) {
         // try to implement it!
         int minDistance = 999;
         int iterationCount = 0;
 
-        // brute force is O(N * N)..
         for (int i = 0, numbersLength = numbers.length; i < numbersLength; i++) {
             int currentNumber = numbers[i];
             for (int j = 1; j < numbers.length; j++) {
@@ -54,6 +54,7 @@ public class DistClosestNumbersProblem {
         return minDistance;
     }
 
+    // complexity is O(n log(n))
     static int sortedArraySolution(int[] numbers) {
         int minDistance = 999;
         int iterationCount = 0;
@@ -79,7 +80,6 @@ public class DistClosestNumbersProblem {
     // Returns the distance between the two closest numbers.
     public static void main(String[] args) {
         int[] testArray = {3, 9, 50, 15, 99, 7, 98, 65};
-//        int result = bruteForceSolutionDistClosestNumbers(testArray);
         int result = sortedArraySolution(testArray);
         System.out.println(result); // Expected result is 1 (the 2 closest numbers are 98 and 99)
     }
